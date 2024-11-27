@@ -80,5 +80,51 @@ public class ArrayTools {
         }
         return minCount;
     }
+        /**
+     * @param pole
+     * @return upravene puvodni pole s obracenym poradim prvku
+     */
+    public static int[] reverseArray(int[] pole) 
+    {
+        for (int i = 0; i < pole.length/2; i++) 
+        {
+            int temp = pole[i];
+            pole[i] = pole[pole.length - i - 1];
+            pole[pole.length - i - 1] = temp;
+        }
+        return pole;
+    }
+
+    /**
+     * @param pole
+     * @return nove pole s obracenym poradim prvku
+     */
+
+    public static int[] reverseArray2(int[] pole) 
+    {
+        int[] pole2 = new int[pole.length];
+        for (int i = 0; i < pole.length; i++) 
+        {
+            pole2[i] = pole[pole.length - i - 1];
+        }
+        return pole2;
+    }
+
+     /**
+     * testuje vzestupnost ciselne posloupnosti
+     * @param a je zadana posloupnost
+     * @return true: pole setridene vzestupne (kazdy prvek vetsi nez predchozi) false: jinak
+     */
+    public static boolean jeVzestupny(int[] a) {
+        //boolean vzestupnost = true;
+        for (int i = 0; i < a.length-1; i++){
+            if (a[i] >= a[i+1])
+               // vzestupnost = false;
+           // break;
+                return false;
+        }
+        //return vzestupnost;
+        return true;
+    }
 
 }
